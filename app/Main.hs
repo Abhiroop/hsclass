@@ -25,12 +25,10 @@ sayNHello n = sayNHello' 0 n []
       else resultSoFar -- otherwise we are done..
 
 toDigits :: Integer -> [Integer]
-toDigits 0 = []
-toDigits n = toDigits (n `div` 10) ++ [n `mod` 10]
+toDigits n = undefined
 
 toDigitsRev :: Integer -> [Integer]
-toDigitsRev 0 = []
-toDigitsRev n = n `mod` 10 : toDigitsRev (n `div` 10) 
+toDigitsRev n = undefined
 
 -- You need to map over every element of the list..
 -- But you can use recursion for it as well..
@@ -39,12 +37,10 @@ toDigitsRev n = n `mod` 10 : toDigitsRev (n `div` 10)
 -- and use DL.map..
 -- but remember it is all about writing Recursion at this point..
 doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther (x:y:xs) = x:(2 * y):doubleEveryOther xs
-doubleEveryOther x = x
+doubleEveryOther list = undefined
 
 sumDigits :: [Integer] -> Integer
-sumDigits [x] = x
-sumDigits (x:xs) = x + sumDigits xs
+sumDigits list = undefined
 
 validate :: Integer -> Bool
 validate n = undefined
@@ -58,11 +54,6 @@ main = do
   putStrLn $ show True
   -- Exercise :
   -- call all above functions here..
-  putStrLn $ show $ sayNHello 5
-  putStrLn $ show $ toDigits 12345
-  putStrLn $ show $ toDigitsRev 12345
-  putStrLn $ show $ doubleEveryOther [1 , 2 , 3 , 4 , 5]
-  putStrLn $ show $ sumDigits [1 , 2 , 3]
 
 
 -- syntax :
