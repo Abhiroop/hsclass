@@ -85,5 +85,11 @@ skips list = zipWith selectNth (repeat list) [1..(length list)]
 -- localMaxima [2,9,5,6,1] == [9,6]
 -- localMaxima [2,3,4,1,5] == [4]
 -- localMaxima [1,2,3,4,5] == []
+
+
+
 localMaxima :: [Integer] -> [Integer]
-localMaxima list = undefined
+localMaxima (x:y:z:xs)
+  | y > x && y > z = y : localMaxima (y:z:xs)
+  | otherwise      = localMaxima (y:z:xs)
+localMaxima _ = []
